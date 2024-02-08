@@ -15,11 +15,11 @@ let tasks = [
 exam.use(express.json());
 
 // ------------ ROUTES ----------------
-exam.get("/", (req, res) => {
+exam.get("/tasks/", (req, res) => {
     res.send(tasks);
 });
 
-exam.get("/:id", (req, res) => {
+exam.get("/tasks/:id", (req, res) => {
     let id = req.params.id;
     for(let i = 0; i < tasks.length; i++) {
         if(tasks[i].id == id){
@@ -28,7 +28,7 @@ exam.get("/:id", (req, res) => {
     }
 });
 
-exam.post("/", (req, res) => {
+exam.post("/tasks/", (req, res) => {
     let newValue = req.body;
     tasks.push(newValue);
     
@@ -40,7 +40,7 @@ exam.post("/", (req, res) => {
     res.send(tasks);
 });
 
-exam.put("/:id", (req, res) => {
+exam.put("/tasks/:id", (req, res) => {
     let id = req.params.id
     for(let i = 0; i < tasks.length; i++) {
         if(tasks[i].id == id){
@@ -50,7 +50,7 @@ exam.put("/:id", (req, res) => {
     }
 });
 
-exam.delete("/:id", (req, res) => {
+exam.delete("/tasks/:id", (req, res) => {
     let id = req.params.id;
     for(let i = 0; i < tasks.length; i++) {
         if(tasks[i].id == id){
