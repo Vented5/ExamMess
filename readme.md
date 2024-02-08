@@ -15,19 +15,22 @@ Node package that allows the creation of applications and server management.
 
 Ok... i used thunderclient instead of postman but its basically the same.
 
-just write on the URL "localhost:3001/" that is the local ip adress and the port of the app.
+just write on the URL "localhost:3001/tasks/" that is the local ip adress and the port of the app.
 
 GET
 the get wors leaving the body empty.
-the individual get works adding an id in the URL. Example: "localhost:3001/2"
+the individual get works adding an id in the URL. Example: "localhost:3001/tasks/2"
 
 POST
-the ost works by adding an object in the body of the request.
-Example: { "id": 3, "title": "practice python", "status": 1}
-
+the post works by adding an object in the body of the request.
+Example:  "localhost:3001/tasks/"
+body {
+    { "id": 3, "title": "practice python", "status": 1}
+}
+ 
 PUT
 It works the same as the post metehod, but you also have to specify an id in the url:
-Example: "localhost:3001/2"
+Example: "localhost:3001/tasks/2"
 Body {
      { "id": 2, "title": "new tasks updated", "status": 1}
 }
@@ -35,4 +38,4 @@ Body {
 Delet
 It works as the get with id just in this case it ereases it from the array.
 
-Example: "localhost:3001/2"
+Example: "localhost:3001/tasks/2"
