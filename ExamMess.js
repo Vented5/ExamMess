@@ -29,15 +29,18 @@ exam.get("/:id", (req, res) => {
 });
 
 exam.post("/", (req, res) => {
-    let newValues = req.body.array
+    let newValue = req.body;
+    tasks.push(newValue);
+    
+    /*let newValues = req.body.array
     newValues.forEach(element => {
         tasks.push(element);    
-    });
+    }); */
     
     res.send(tasks);
 });
 
-exam.patch("/:id", (req, res) => {
+exam.put("/:id", (req, res) => {
     let id = req.params.id
     for(let i = 0; i < tasks.length; i++) {
         if(tasks[i].id == id){
