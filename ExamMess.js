@@ -1,9 +1,10 @@
+//---- Aplication inizialization
 const express = require("express");
 
 const exam = new express();
 const port = 3001;
 
-
+/// ----- Database simulation
 let tasks = [
     { "id": 1, "title": "Math homework", "status": 1 }, 
     { "id": 2, "title": "learn german", "status": 0},
